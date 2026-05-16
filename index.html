@@ -3,446 +3,130 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Royal Household of Links Land | Comming Soon</title>
-  <meta name="description" content="Official placeholder page for the Royal Household of Links Land." />
-  <style>
-    :root {
-      --ink: #171717;
-      --muted: #565656;
-      --border: #d7d1c2;
-      --paper: #fbfaf6;
-      --cream: #f3efe5;
-      --maroon: #571626;
-      --navy: #07196d;
-      --gold: #b17922;
-      --focus: #ffdd00;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      min-height: 100%;
-      background: var(--paper);
-    }
-
-    body {
-      min-height: 100%;
-      margin: 0;
-      color: var(--ink);
-      background: var(--paper);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 16px;
-      line-height: 1.5;
-    }
-
-    a {
-      color: var(--navy);
-      text-decoration-thickness: 1px;
-      text-underline-offset: 0.18em;
-    }
-
-    a:focus-visible,
-    button:focus-visible {
-      outline: 3px solid var(--focus);
-      outline-offset: 2px;
-    }
-
-    .top-strip {
-      height: 6px;
-      background: linear-gradient(90deg, var(--maroon) 0 48%, var(--gold) 48% 52%, var(--navy) 52% 100%);
-    }
-
-    .wrap {
-      width: min(1040px, calc(100% - 32px));
-      margin: 0 auto;
-    }
-
-    .masthead {
-      border-bottom: 1px solid var(--border);
-      background: #fff;
-    }
-
-    .masthead-inner {
-      min-height: 84px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      padding: 16px 0;
-    }
-
-    .identity {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      min-width: 0;
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .identity img {
-      width: 44px;
-      height: 44px;
-      object-fit: contain;
-      flex: 0 0 auto;
-    }
-
-    .identity-text {
-      display: grid;
-      gap: 2px;
-      min-width: 0;
-    }
-
-    .department {
-      color: var(--muted);
-      font-size: 0.83rem;
-    }
-
-    .site-name {
-      color: var(--ink);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1.22rem, 3vw, 1.55rem);
-      line-height: 1.15;
-    }
-
-    .main-site {
-      flex: 0 0 auto;
-      font-weight: 700;
-      font-size: 0.95rem;
-    }
-
-    .hero {
-      padding: clamp(46px, 8vw, 86px) 0 clamp(42px, 7vw, 74px);
-      border-bottom: 1px solid var(--border);
-      background:
-        linear-gradient(90deg, rgba(87, 22, 38, 0.05), transparent 40%),
-        var(--cream);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 280px;
-      gap: clamp(34px, 6vw, 74px);
-      align-items: start;
-    }
-
-    .breadcrumb {
-      margin: 0 0 26px;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .breadcrumb a {
-      color: var(--muted);
-    }
-
-    h1 {
-      max-width: 760px;
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2.65rem, 8vw, 5.25rem);
-      line-height: 0.98;
-      letter-spacing: 0;
-      color: var(--maroon);
-    }
-
-    .lead {
-      max-width: 680px;
-      margin: 24px 0 0;
-      color: #292929;
-      font-size: clamp(1.1rem, 2.5vw, 1.32rem);
-      line-height: 1.55;
-    }
-
-    .notice {
-      margin-top: 34px;
-      max-width: 680px;
-      padding: 18px 20px;
-      border-left: 5px solid var(--gold);
-      background: #fff;
-    }
-
-    .notice h2 {
-      margin: 0 0 8px;
-      font-size: 1.05rem;
-    }
-
-    .notice p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .crest-panel {
-      border: 1px solid var(--border);
-      background: #fff;
-      padding: 24px;
-    }
-
-    .crest-panel img {
-      display: block;
-      width: 120px;
-      height: 120px;
-      object-fit: contain;
-      margin: 0 auto 18px;
-      border: 1px solid var(--border);
-      background: var(--paper);
-    }
-
-    .crest-panel h2 {
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.35rem;
-      line-height: 1.2;
-      color: var(--maroon);
-    }
-
-    .crest-panel p {
-      margin: 12px 0 0;
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .content {
-      padding: clamp(36px, 6vw, 64px) 0;
-      background: var(--paper);
-    }
-
-    .content-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: clamp(30px, 6vw, 72px);
-      align-items: start;
-    }
-
-    .section-label {
-      margin: 0 0 8px;
-      color: var(--maroon);
-      font-size: 0.86rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .content h2 {
-      margin: 0 0 18px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1.7rem, 4vw, 2.25rem);
-      line-height: 1.15;
-    }
-
-    .content p {
-      max-width: 680px;
-      margin: 0 0 18px;
-      color: var(--muted);
-      font-size: 1.02rem;
-    }
-
-    .facts {
-      border-top: 1px solid var(--border);
-    }
-
-    .fact {
-      padding: 17px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .fact dt {
-      margin: 0 0 4px;
-      color: var(--muted);
-      font-size: 0.88rem;
-    }
-
-    .fact dd {
-      margin: 0;
-      font-weight: 700;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 26px;
-    }
-
-    .button {
-      display: inline-flex;
-      min-height: 44px;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 16px;
-      border: 2px solid var(--maroon);
-      color: #fff;
-      background: var(--maroon);
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .button.secondary {
-      color: var(--maroon);
-      background: transparent;
-    }
-
-    .sidebar {
-      padding: 20px;
-      border: 1px solid var(--border);
-      background: #fff;
-    }
-
-    .sidebar h2 {
-      margin-bottom: 12px;
-      font-size: 1.25rem;
-    }
-
-    .sidebar p {
-      margin: 0;
-      font-size: 0.95rem;
-    }
-
-    .footer {
-      border-top: 1px solid var(--border);
-      background: #fff;
-    }
-
-    .footer-inner {
-      padding: 22px 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    @media (max-width: 760px) {
-      .masthead-inner,
-      .footer-inner {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .hero-grid,
-      .content-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .crest-panel {
-        max-width: 360px;
-      }
-
-      .main-site {
-        font-size: 0.9rem;
-      }
-    }
-
-    @media (max-width: 460px) {
-      .wrap {
-        width: min(100% - 24px, 1040px);
-      }
-
-      .identity {
-        align-items: flex-start;
-      }
-
-      .identity img {
-        width: 38px;
-        height: 38px;
-      }
-
-      h1 {
-        font-size: clamp(2.55rem, 17vw, 4rem);
-      }
-
-      .button {
-        width: 100%;
-      }
-    }
-
-a:active {
-    border: 3px dotted var(--maroon);
-}
-
-::selection {
-  background: var(--maroon);  
-  color: white; /* optional */
-}
-
-/* Firefox needs its own selector */
-::-moz-selection {
-  background: var(--maroon);
-  color: white;
-}
-  </style>
+  <title>Royal Household of Links Land</title>
+  <meta name="description" content="Official website of the Royal Household of the Constitutional Monarchy of Links Land." />
+  <link rel="stylesheet" href="/assets/style.css" />
 </head>
 <body>
   <div class="top-strip" aria-hidden="true"></div>
 
   <header class="masthead">
     <div class="wrap masthead-inner">
-      <a class="identity" href="https://royal.govll.org" aria-label="Royal Household of Links Land">
-        <img src="assets/links-land-flag.png" alt="" />
+      <a class="identity" href="/" aria-label="Royal Household of Links Land — home">
+        <img src="/assets/links-land-flag.png" alt="" />
         <span class="identity-text">
           <span class="department">Constitutional Monarchy of Links Land</span>
           <span class="site-name">Royal Household</span>
         </span>
       </a>
-      <a class="main-site" href="https://govll.org" target="_blank" rel="noopener noreferrer">Go to govll.org</a>
+      <a class="nav-right" href="https://govll.org" target="_blank" rel="noopener noreferrer">Go to govll.org</a>
     </div>
   </header>
+
+  <nav class="primary-nav" aria-label="Main navigation">
+    <div class="wrap" style="display:flex; justify-content:space-between; align-items:center;">
+      <ul>
+        <li><a href="/" aria-current="page">Home</a></li>
+        <li><a href="/monarchy">The Monarchy</a></li>
+        <li><a href="/constitution">Constitutional Role</a></li>
+        <li><a href="/succession">Succession</a></li>
+        <li><a href="/honours">Royal Honours</a></li>
+      </ul>
+    </div>
+  </nav>
 
   <main>
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
           <p class="breadcrumb"><a href="https://govll.org" target="_blank" rel="noopener noreferrer">Links Land Government</a> / Royal Household</p>
-          <h1>Comming Soon</h1>
-          <p class="lead">The official website for the Royal Household of Links Land is currently being prepared.</p>
+          <h1>Royal Household</h1>
+          <p class="lead">The official website of the Royal Household of the Constitutional Monarchy of Links Land.</p>
 
-          <div class="notice" role="note" aria-label="Launch notice">
-            <h2>Launch notice</h2>
-            <p>This domain will provide public information about the Crown, ceremonial duties, and the monarchy's constitutional role.</p>
+          <div class="notice" role="note">
+            <h2>About this website</h2>
+            <p>This site publishes official information about the Crown, the Monarch's constitutional duties, the royal line of succession, and the honours system of Links Land.</p>
           </div>
         </div>
 
-        <aside class="crest-panel" aria-label="Links Land flag">
-          <img src="assets/links-land-flag.png" alt="Flag of Links Land" />
+        <aside class="panel" aria-label="Royal Household">
+          <img src="/assets/links-land-flag.png" alt="Flag of Links Land" />
           <h2>Royal Household</h2>
-          <p>Official information will be published here once the site opens.</p>
+          <p>Head of State: His Majesty The King</p>
+          <p>Capital: Tentincon</p>
+          <p>Constitution in effect: 16 May 2025</p>
         </aside>
       </div>
     </section>
 
-    <section class="content" id="launch-information">
+    <section class="content">
+      <div class="wrap">
+        <p class="section-label">The Crown</p>
+        <h2>The role of the Monarchy</h2>
+        <p>The Monarch of Links Land serves as Head of State and a symbol of national unity and continuity. Under the Constitution, the Crown fulfils a vital ceremonial and constitutional role, acting always on the advice of the elected government and in accordance with the will of the people of Links Land.</p>
+        <p>The monarchy is hereditary. The throne passes according to the rules of primogeniture, with any changes to the line of succession requiring parliamentary approval.</p>
+
+        <div class="actions">
+          <a class="button" href="/monarchy">About the Monarchy</a>
+          <a class="button secondary" href="/constitution">Constitutional role</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="alt-band">
+      <div class="wrap">
+        <p class="section-label">Explore</p>
+        <h2 style="margin:0 0 24px; font-family:Georgia,'Times New Roman',serif; font-size:clamp(1.7rem,4vw,2.25rem); line-height:1.15;">Information on this site</h2>
+        <div class="card-grid">
+          <a class="card" href="/monarchy">
+            <p class="card-label">The Monarchy</p>
+            <h3>The Monarch and the Royal Household</h3>
+            <p>Background on the role of the Crown, royal duties, and the Monarch's relationship with government.</p>
+          </a>
+          <a class="card" href="/constitution">
+            <p class="card-label">Constitutional Role</p>
+            <h3>Powers and responsibilities under the Constitution</h3>
+            <p>How the Monarch exercises royal powers in accordance with the Constitution of Links Land.</p>
+          </a>
+          <a class="card" href="/succession">
+            <p class="card-label">Succession</p>
+            <h3>The line of succession</h3>
+            <p>The rules governing how the throne of Links Land is inherited and how succession may be changed.</p>
+          </a>
+          <a class="card" href="/honours">
+            <p class="card-label">Royal Honours</p>
+            <h3>Honours and titles</h3>
+            <p>The system by which the Monarch bestows honours, medals, and titles upon citizens of Links Land.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <section class="content">
       <div class="wrap content-grid">
         <div>
-          <p class="section-label">About this page</p>
-          <h2>A new public home for royal information</h2>
-          <p>The Royal Household website is intended to sit alongside the main government website at govll.org. It will be used for formal notices, background information, and material relating to the constitutional monarchy.</p>
-          <p>Until the full site is ready, official government information remains available from the main Links Land Government website.</p>
-
-          <div class="actions" aria-label="Useful links">
-            <a class="button" href="https://govll.org" target="_blank" rel="noopener noreferrer">Visit the main government site</a>
-            <a class="button secondary" href="#launch-information">View launch information</a>
+          <p class="section-label">The Constitution</p>
+          <h2>Founded on democratic principles</h2>
+          <p>Links Land is a Democratic-Constitutional Monarchy founded on the principles of democracy, liberty, and equality. The Constitution, which came into effect on 16 May 2025, defines the governance of the nation and protects the rights of all citizens.</p>
+          <p>The monarchy operates strictly within the framework of that Constitution. All acts of the Monarch are performed on the advice of the President and the government, ensuring full democratic accountability.</p>
+          <div class="actions">
+            <a class="button secondary" href="https://govll.org/constitution/" target="_blank" rel="noopener noreferrer">Read the full Constitution</a>
           </div>
         </div>
 
-        <aside class="sidebar" aria-label="Site details">
-          <p class="section-label">Site details</p>
-          <dl class="facts">
-            <div class="fact">
-              <dt>Domain</dt>
-              <dd>royal.govll.org</dd>
-            </div>
-            <div class="fact">
-              <dt>Main site</dt>
-              <dd><a href="https://govll.org" target="_blank" rel="noopener noreferrer">govll.org</a></dd>
-            </div>
-            <div class="fact">
-              <dt>Status</dt>
-              <dd>In preparation</dd>
-            </div>
-          </dl>
+        <aside class="sidebar">
+          <p class="section-label">Quick links</p>
+          <h2>Royal Household</h2>
+          <nav aria-label="Section links">
+            <ul class="sidebar-nav">
+              <li><a href="/monarchy">The Monarchy</a></li>
+              <li><a href="/constitution">Constitutional Role</a></li>
+              <li><a href="/succession">Succession</a></li>
+              <li><a href="/honours">Royal Honours</a></li>
+              <li><a href="https://govll.org" target="_blank" rel="noopener noreferrer">Links Land Government</a></li>
+              <li><a href="https://govll.org/constitution/" target="_blank" rel="noopener noreferrer">The Constitution</a></li>
+            </ul>
+          </nav>
         </aside>
       </div>
     </section>
@@ -451,7 +135,13 @@ a:active {
   <footer class="footer">
     <div class="wrap footer-inner">
       <span>Royal Household of Links Land</span>
-      <span>Official placeholder for royal.govll.org</span>
+      <nav class="footer-links" aria-label="Footer links">
+        <a href="/monarchy">The Monarchy</a>
+        <a href="/constitution">Constitutional Role</a>
+        <a href="/succession">Succession</a>
+        <a href="/honours">Royal Honours</a>
+        <a href="https://govll.org" target="_blank" rel="noopener noreferrer">govll.org</a>
+      </nav>
     </div>
   </footer>
 </body>
